@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self';">
+    <meta name="application-name" content="The Business School">
+    <link rel="stylesheet" href="styles.css">
+    <title>The Business School</title>
+</head>
+<body>
+    <h1 data-i18n="appTitle">The Business School</h1>
+
+    <div id="app-container">
+
+        <!-- HOME: only two choices -->
+        <section id="home-screen" class="screen">
+            <button class="home-card" id="open-learning">
+                <span class="home-icon">📚</span>
+                <span class="home-title" data-i18n="myLearning">My Learning</span>
+            </button>
+            <button class="home-card" id="open-business">
+                <span class="home-icon">💼</span>
+                <span class="home-title" data-i18n="myBusiness">My Business</span>
+            </button>
+        </section>
+
+        <!-- LEARNING: list of modules -->
+        <section id="learning-screen" class="screen hidden">
+            <button class="link-btn" data-go="home-screen" data-i18n="back">← Back</button>
+            <h2 data-i18n="myLearning">My Learning</h2>
+            <div id="module-list"></div>
+        </section>
+
+        <!-- ONE MODULE: lectures + Start button -->
+        <section id="module-screen" class="screen hidden">
+            <button class="link-btn" data-go="learning-screen" data-i18n="backToModules">← All modules</button>
+            <h2 id="module-title"></h2>
+            <ol id="lecture-list"></ol>
+            <div class="button-row">
+                <button id="start-btn" class="primary-btn"></button>
+                <button id="restart-btn" class="secondary-btn hidden" data-i18n="startOver">Start over</button>
+            </div>
+        </section>
+
+        <!-- LESSON: one lecture at a time -->
+        <section id="lesson-screen" class="screen hidden">
+            <button class="link-btn" id="exit-lesson" data-i18n="exit">✕ Exit</button>
+            <p id="lesson-progress" class="small-text"></p>
+            <h3 id="lesson-title"></h3>
+            <div id="lesson-body"></div>
+            <div class="button-row">
+                <button id="prev-btn" class="secondary-btn" data-i18n="previous">Previous</button>
+                <button id="next-btn" class="primary-btn"></button>
+            </div>
+        </section>
+
+        <!-- BUSINESS: tracker -->
+        <section id="business-screen" class="screen hidden">
+            <button class="link-btn" id="exit-business" data-i18n="exit">✕ Exit</button>
+            <h2 data-i18n="businessTracker">My Business Tracker</h2>
+
+            <div class="summary-board">
+                <div class="summary-card">
+                    <p data-i18n="totalSales">Total Sales</p>
+                    <div id="total-sales">₦0</div>
+                </div>
+                <div class="summary-card">
+                    <p data-i18n="totalExpenses">Total Expenses</p>
+                    <div id="total-expenses">₦0</div>
+                </div>
+                <div class="summary-card">
+                    <p data-i18n="netProfit">Net Profit/Loss</p>
+                    <div id="net-profit">₦0</div>
+                </div>
+            </div>
+            <p id="profit-message" class="small-text"></p>
+
+            <div class="input-form-container">
+                <h3 data-i18n="addTransaction">Add New Transaction</h3>
+                <form id="transaction-form">
+                    <div>
+                        <label for="description" data-i18n="itemLabel">Item/Description:</label>
+                        <input type="text" id="description" placeholder="e.g., What did you sell today" required>
+                    </div>
+                    <div>
+                        <label for="amount" data-i18n="amountLabel">Amount(₦):</label>
+                        <input type="number" id="amount" placeholder="e.g., 1500" required>
+                    </div>
+                    <div>
+                        <label for="type" data-i18n="typeLabel">Type:</label>
+                        <select id="type">
+                            <option value="sale">Sale (Income)</option>
+                            <option value="expense">Expense</option>
+                        </select>
+                    </div>
+                    <button type="submit" data-i18n="addEntry">Add Entry</button>
+                </form>
+            </div>
+
+            <div class="transaction-history-container">
+                <h3 data-i18n="recent">Recent Transactions</h3>
+                <ul id="transaction-list"></ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- Save / don't save prompt -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-box">
+            <h3 id="modal-title"></h3>
+            <p id="modal-text"></p>
+            <div class="button-row">
+                <button id="modal-yes" class="primary-btn"></button>
+                <button id="modal-no" class="secondary-btn"></button>
+                <button id="modal-cancel" class="link-btn"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
