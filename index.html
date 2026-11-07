@@ -6,6 +6,10 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self';">
     <meta name="application-name" content="The Business School">
     <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#7b1fa2">
+    <link rel="icon" type="image/png" href="icons/icon-192.png">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
     <title>The Business School</title>
 </head>
 <body>
@@ -30,12 +34,14 @@
             <button class="link-btn" data-go="home-screen" data-i18n="back">← Back</button>
             <h2 data-i18n="myLearning">My Learning</h2>
             <div id="module-list"></div>
+            <div id="recap"></div>
         </section>
 
         <!-- ONE MODULE: lectures + Start button -->
         <section id="module-screen" class="screen hidden">
             <button class="link-btn" data-go="learning-screen" data-i18n="backToModules">← All modules</button>
             <h2 id="module-title"></h2>
+            <p id="module-idea" class="small-text"></p>
             <ol id="lecture-list"></ol>
             <div class="button-row">
                 <button id="start-btn" class="primary-btn"></button>
