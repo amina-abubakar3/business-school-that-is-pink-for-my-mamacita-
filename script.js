@@ -24,6 +24,8 @@ const ui = {
         completed: '✓ Completed',
         inProgress: 'In progress',
         notStarted: 'Not started',
+        bigIdea: 'Big idea',
+        quickRecap: 'Quick Recap',
         comingSoon: 'The content for this lecture is coming soon.',
         saveLessonTitle: 'Save your progress?',
         saveLessonText: 'If you save, you will continue from this lecture when you come back. If you do not save, this module starts from the beginning.',
@@ -75,99 +77,82 @@ function applyLanguage() {
 const modules = [
     {
         id: 1,
-        title: { en: 'Module 1: Introduction to Business' },
+        title: { en: "Module 1: Introduction to Business" },
+        bigIdea: { en: "A business is a team of people who make or sell something that others need or want." },
         lectures: [
-            {
-                title: { en: 'What is Business?' },
-                body: { en: [
-                    'Big idea: A business is a team of people who make or sell something that others need or want.',
-                    'A business sells things (like toys or snacks) or services (like haircuts or tutoring) to people. Its purpose is to solve a problem or make people happy, and to earn money so it can keep going.',
-                    'For Example: A lemonade stand solves the problem "I\'m thirsty!"'
-                ] }
-            },
-            {
-                title: { en: 'Types of Business' },
-                body: { en: [
-                    { olist: [
-                        'Sole proprietorship: One person owns and runs it. E.g Your business.',
-                        'Partnership: Two or more people share the work and the profits. E.g Two friends selling cookies together.',
-                        'Corporation: A big business owned by many people who hold "shares". It is treated like its own "person" under the law.',
-                        'LLC: A mix of both. It\'s easy to run, and your personal stuff (like your house) stays safe if the business has trouble.'
-                    ] }
-                ] }
-            },
-            {
-                title: { en: 'The Business Environment' },
-                body: { en: [
-                    { olist: [
-                        'Inside factors (things the business controls): its workers, its money, its rules, its products.',
-                        'Outside factors (things it can\'t control): the weather, the economy, new laws, competitors, what customers like.'
-                    ] },
-                    { note: 'Note: Smart businesses keep an eye on both.' }
-                ] }
-            }
+            { title: { en: "What is Business?" }, body: { en: ["A business sells things (like toys or snacks) or services (like haircuts or tutoring) to people.", "Its purpose is to solve a problem or make people happy, and to earn money so it can keep going.", "Example: A lemonade stand solves the problem \"I'm thirsty!\""] } },
+            { title: { en: "Types of Businesses" }, body: { en: [{"list": ["Sole proprietorship: One person owns and runs it. (A kid who walks dogs for neighbors.)", "Partnership: Two or more people share the work and the profits. (Two friends selling cookies together.)", "Corporation: A big business owned by many people who hold \"shares.\" It is treated like its own \"person\" under the law.", "LLC: A mix of both. It's easy to run, and your personal stuff (like your house) stays safe if the business has trouble."]}] } },
+            { title: { en: "The Business Environment" }, body: { en: [{"list": ["Inside factors (things the business controls): its workers, its money, its rules, its products.", "Outside factors (things it can't control): the weather, the economy, new laws, competitors, what customers like."]}, {"note": "Smart businesses keep an eye on both."}] } }
         ]
     },
     {
         id: 2,
-        title: { en: 'Module 2: Marketing' },
+        title: { en: "Module 2: Marketing – Reaching Your Customers" },
+        bigIdea: { en: "Marketing is how people find out about your product and decide they want it." },
         lectures: [
-            { title: { en: 'The Marketing Mix' }, body: { en: [] } },
-            { title: { en: 'Market Research and Target Audience Identification' }, body: { en: [] } },
-            { title: { en: 'Digital Marketing Strategies' }, body: { en: [] } },
-            { title: { en: 'Branding and Customer Relationship Management' }, body: { en: [] } }
+            { title: { en: "The Marketing Mix (the 4 Ps)" }, body: { en: [{"list": ["Product: What are you selling?", "Price: How much does it cost?", "Place: Where can people buy it? (A shop? Online?)", "Promotion: How do you tell people about it? (Ads, posters, videos)"]}] } },
+            { title: { en: "Market Research and Target Audience" }, body: { en: ["Market research means asking questions to learn what people want.", "Your target audience is the group of people most likely to buy from you.", "Example: A skateboard shop's target audience is probably teens, not grandparents."] } },
+            { title: { en: "Digital Marketing" }, body: { en: [{"list": ["SEO: Helping your website show up near the top when people search on Google.", "Social media: Sharing posts and videos where people hang out online.", "Content marketing: Making helpful or fun things (blogs, videos) so people trust you and come to you."]}] } },
+            { title: { en: "Branding and Customer Relationships" }, body: { en: ["Your brand is how people recognize and feel about you: your name, logo, colors, and promise.", "Customer relationship management means treating customers well so they come back and tell their friends."] } }
         ]
     },
     {
         id: 3,
-        title: { en: 'Module 3: Finance and Accounting' },
+        title: { en: "Module 3: Finance and Accounting – The Numbers Behind Business" },
+        bigIdea: { en: "Money is the scoreboard of a business. You have to keep track of it." },
         lectures: [
-            { title: { en: 'Financial Statements' }, body: { en: [] } },
-            { title: { en: 'Basic Accounting Principles' }, body: { en: [] } },
-            { title: { en: 'Financial Analysis' }, body: { en: [] } },
-            { title: { en: 'Budgeting and Financial Planning for Business Success' }, body: { en: [] } }
+            { title: { en: "Financial Statements" }, body: { en: [{"list": ["Balance sheet: A snapshot of what the business owns and owes today.", "Income statement: Shows how much money came in and went out over time, and whether there was a profit.", "Cash flow statement: Shows where the actual cash moved, like checking your wallet."]}] } },
+            { title: { en: "Basic Accounting Principles" }, body: { en: [{"list": ["Assets: Things the business owns (cash, equipment).", "Liabilities: Things the business owes (loans, bills).", "Equity: What's left for the owners after paying what's owed."]}, {"note": "Simple formula: Assets = Liabilities + Equity"}] } },
+            { title: { en: "Financial Analysis (Key Ratios)" }, body: { en: ["Ratios are like report-card grades for a business.", "They help us see if the business is making enough profit, can pay its bills, and isn't borrowing too much."] } },
+            { title: { en: "Budgeting and Financial Planning" }, body: { en: ["A budget is a plan for how to spend and save money.", "Like planning your pocket money: some for needs, some for fun, some saved for later.", "Good planning helps a business avoid running out of money."] } }
         ]
     },
     {
         id: 4,
-        title: { en: 'Module 4: Operations Management' },
+        title: { en: "Module 4: Operations Management – Streamlining Business Processes" },
+        bigIdea: { en: "Operations is how a business actually gets things made and delivered, smoothly and without waste." },
         lectures: [
-            { title: { en: 'Supply Chain Management' }, body: { en: [] } },
-            { title: { en: 'Quality Control and Process Improvement' }, body: { en: [] } },
-            { title: { en: 'Inventory Management and Production Planning' }, body: { en: [] } },
-            { title: { en: 'Lean Management and Six Sigma Methodologies' }, body: { en: [] } }
+            { title: { en: "Supply Chain Management" }, body: { en: ["A supply chain is the journey of a product: getting materials, making the product, then delivering it to you.", "Think of a pizza: flour and cheese arrive, the pizza is made, then a driver brings it to your door."] } },
+            { title: { en: "Quality Control and Process Improvement" }, body: { en: ["Quality control means checking products so they're good before customers get them.", "Process improvement means always finding better, faster ways to do things."] } },
+            { title: { en: "Inventory Management and Production Planning" }, body: { en: ["Inventory is the stuff a business has in stock.", "Too little means customers go away disappointed. Too much wastes money and space.", "Production planning decides what to make, how much, and when."] } },
+            { title: { en: "Lean Management and Six Sigma" }, body: { en: [{"list": ["Lean: Cut out waste (wasted time, wasted materials, wasted steps).", "Six Sigma: A method to make almost zero mistakes."]}, "Together they help businesses work faster and better."] } }
         ]
     },
     {
         id: 5,
-        title: { en: 'Module 5: Management and Leadership' },
+        title: { en: "Module 5: Management and Leadership – Guiding Your Team" },
+        bigIdea: { en: "A good leader helps a team do great things together." },
         lectures: [
-            { title: { en: 'Leadership Styles' }, body: { en: [] } },
-            { title: { en: 'Motivation Theories' }, body: { en: [] } },
-            { title: { en: 'Building High-Performance Teams' }, body: { en: [] } },
-            { title: { en: 'Decision-Making and Problem-Solving in Business' }, body: { en: [] } }
+            { title: { en: "Leadership Styles" }, body: { en: [{"list": ["Autocratic: The leader makes all the decisions alone.", "Democratic: The leader asks the team and they decide together.", "Laissez-faire: The leader lets the team do things their own way.", "Transformational: The leader inspires the team with a big vision and helps everyone grow."]}] } },
+            { title: { en: "Motivation Theories" }, body: { en: [{"list": ["Maslow's Hierarchy: People first need the basics (food, safety), then friends and respect, and finally the chance to be their best.", "Herzberg's Two-Factor Theory: Some things stop people from being unhappy at work (fair pay, safe place). Other things make them truly excited (praise, interesting work, chances to grow)."]}] } },
+            { title: { en: "Building High-Performance Teams" }, body: { en: ["Great teams collaborate (work together) and communicate (share ideas clearly and listen).", "Everyone knows their role and trusts each other."] } },
+            { title: { en: "Decision-Making and Problem-Solving" }, body: { en: [{"olist": ["Spot the problem.", "Think of different solutions.", "Compare the pros and cons.", "Pick one and try it.", "Check if it worked."]}] } }
         ]
     },
     {
         id: 6,
-        title: { en: 'Module 6: Entrepreneurship' },
+        title: { en: "Module 6: Entrepreneurship – Turning Ideas into Reality" },
+        bigIdea: { en: "An entrepreneur is someone who spots a good idea and builds a business from it." },
         lectures: [
-            { title: { en: 'The Entrepreneurial Mindset' }, body: { en: [] } },
-            { title: { en: 'Business Planning' }, body: { en: [] } },
-            { title: { en: 'Funding Options' }, body: { en: [] } },
-            { title: { en: 'Marketing and Growing' }, body: { en: [] } }
+            { title: { en: "The Entrepreneurial Mindset" }, body: { en: ["Successful founders are curious, brave, creative, and hard-working.", "They don't give up when they fail. They learn and try again."] } },
+            { title: { en: "Business Planning" }, body: { en: ["A business plan is a roadmap. It says what you'll sell, who will buy it, how you'll earn money, and what your goals are."] } },
+            { title: { en: "Funding Options" }, body: { en: [{"list": ["Bootstrapping: Using your own savings to start.", "Angel investors: Wealthy people who give money to help a new business in exchange for a small piece of it.", "Venture capital: Companies that invest large amounts in startups they think will grow very big."]}] } },
+            { title: { en: "Marketing and Growing Your Startup" }, body: { en: ["Start by finding your first customers and listening to them.", "Use what you learn to improve, then spread the word and grow step by step."] } }
         ]
     },
     {
         id: 7,
-        title: { en: 'Module 7: Business Ethics and Corporate Social Responsibility (CSR)' },
+        title: { en: "Module 7: Business Ethics and Corporate Social Responsibility (CSR)" },
+        bigIdea: { en: "Good businesses don't just make money. They do the right thing too." },
         lectures: [
-            { title: { en: 'Corporate Social Responsibility' }, body: { en: [] } },
-            { title: { en: 'Sustainability and the Triple Bottom Line' }, body: { en: [] } },
-            { title: { en: 'Ethical Leadership and Building a Values-Driven Organization' }, body: { en: [] } }
+            { title: { en: "Corporate Social Responsibility" }, body: { en: ["CSR means a business cares about people and the planet, not only profits.", "Examples: giving to charity, treating workers fairly, protecting nature."] } },
+            { title: { en: "Sustainability and the Triple Bottom Line" }, body: { en: ["Sustainability means doing business in a way that doesn't use up the Earth's resources for future generations.", "Triple Bottom Line means measuring success in 3 ways: People, Planet, and Profit."] } },
+            { title: { en: "Ethical Leadership and Values-Driven Organizations" }, body: { en: ["An ethical leader is honest, fair, and does the right thing even when nobody is watching.", "A values-driven business has clear beliefs (like honesty and kindness) that guide every decision."] } }
         ]
     }
 ];
+
+const recap = { en: ["Business solves problems for customers.", "Marketing helps people find you.", "Finance tracks the money.", "Operations makes things run smoothly.", "Leadership guides the team.", "Entrepreneurship turns ideas into businesses.", "Ethics means doing good while doing business."] };
 
 // ===============================
 //  SAFE STORAGE HELPERS
@@ -232,7 +217,22 @@ let learning = load('bs_learning', { progress: {}, done: [] });
 let currentModule = null;
 let currentIndex = 0;
 
+function renderRecap() {
+    const box = document.getElementById('recap');
+    box.innerHTML = '';
+    const h = document.createElement('h3');
+    h.textContent = t('quickRecap');
+    const ul = document.createElement('ul');
+    tr(recap).forEach(line => {
+        const li = document.createElement('li');
+        li.textContent = line;
+        ul.appendChild(li);
+    });
+    box.append(h, ul);
+}
+
 function renderModuleList() {
+    renderRecap();
     const list = document.getElementById('module-list');
     list.innerHTML = '';
     modules.forEach(mod => {
@@ -262,6 +262,7 @@ function renderModuleList() {
 function openModule(id) {
     currentModule = modules.find(m => m.id === id);
     document.getElementById('module-title').textContent = tr(currentModule.title);
+    document.getElementById('module-idea').textContent = t('bigIdea') + ': ' + tr(currentModule.bigIdea);
 
     const saved = learning.progress[id];
     const ol = document.getElementById('lecture-list');
@@ -524,3 +525,10 @@ document.getElementById('open-business').addEventListener('click', () => {
 
 applyLanguage();
 showScreen('home-screen');
+
+// Lets the app install on a phone and open offline
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js').catch(() => {});
+    });
+}
