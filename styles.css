@@ -109,6 +109,10 @@ h1{ text-align: center; color: #880e4f; }
 }
 #lecture-list li.done{ color: #2e7d32; }
 
+#recap{ background:#fff; border-radius:6px; padding:5px 15px 10px; margin-top:20px; }
+#recap h3{ color:#880e4f; }
+#module-idea{ font-size:0.95rem; font-style:italic; }
+
 /* Lesson */
 #lesson-title{ color: #880e4f; font-size: 1.3rem; }
 #lesson-body{
